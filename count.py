@@ -4,7 +4,7 @@ import numpy as np
 import argparse
 #frame
 def detect(frame):
-    bounding_box_cordinates, weights =  HOGCV.detectMultiScale(frame, winStride = (4, 4), padding = (8, 8), scale = 0.5)
+    bounding_box_cordinates, weights =  HOGCV.detectMultiScale(frame, winStride=(10, 10),padding=(32, 32), scale=1.1)#, padding = (8, 8), scale = 0.5
     
     person = 1
     for x,y,w,h in bounding_box_cordinates:
@@ -118,5 +118,8 @@ if __name__ == "__main__":
     #run only case camera
     writer = None
     detectByCamera(writer)
+    # detectByPathImage('img1.jpg','output.jpg')
+    # detectByPathImage('img2.jpg','output2.jpg')
+    # detectByPathImage('img3.jpg','output3.jpg')
 
 #main module of the system
